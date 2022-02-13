@@ -9,3 +9,8 @@
   </figcaption>
 </figure>
 {% endmacro %}
+
+{% macro photo(slug) %}
+{% set post = collections.post | findBySlug(slug) %}
+{{ post.data.title }}
+{% endmacro %}

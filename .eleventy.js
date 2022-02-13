@@ -7,6 +7,11 @@ module.exports = function (eleventyConfig) {
   };
   eleventyConfig.setLibrary("md", markdownIt(options).disable(["code"]));
 
+  eleventyConfig.addNunjucksFilter("findBySlug", function (arr, slug) {
+    const post = arr.find(({ fileSlug }) => fileSlug === slug);
+    return post;
+  });
+
   return {
     dir: {
       input: "src",

@@ -20,4 +20,9 @@ layout: _base.njk
   ```js
   code blocks are disabled for indent purposes, but fenced codeblocks still work.
   ```
+
+{{ blk.photo("photo-1") }}
+
+{{ blk.photo("photo-3") }}
+
 {% endblock %}

@@ -1,0 +1,13 @@
+{
+  "name": "njk-in-md",
+  "version": "1.0.0",
+  "description": "11ty njk-in-md demo",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "author": "m4dz <@m4d_z>",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0"
+  }
+}

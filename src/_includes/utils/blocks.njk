@@ -1,0 +1,11 @@
+{% import "utils/elements.njk" as els %}
+
+{% macro image(src) %}
+<figure>
+  <img src="{{ src }}" alt="">
+	<figcaption>
+    {{ caller() }}
+    {{ els.btn("see image") }}
+  </figcaption>
+</figure>
+{% endmacro %}

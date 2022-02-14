@@ -5,12 +5,15 @@
   <img src="{{ src }}" alt="">
   <figcaption>
     {{- caller() -}}
-    {{ els.btn("see image") }}
+    {{ els.btn("this button is a nested import") }}
   </figcaption>
 </figure>
 {%- endmacro %}
 
-{% macro photo(slug) -%}
+{% macro card(slug) -%}
 {% set post = collections.post | findBySlug(slug) %}
-<h2>{{ post.data.title }}</h2>
+<div class="card">
+  <h2>{{ post.data.title }}</h2>
+  <p>Here is a card for the post with the slug: <code>{{ slug }}</code></p>
+</div>
 {%- endmacro %}

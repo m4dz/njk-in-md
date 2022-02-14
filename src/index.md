@@ -6,11 +6,16 @@ layout: _base.njk
 {% extends "page.njk" %}
 
 {% block header %}
-# {{ title }}
+
+  # {{ title }}
+
 {% endblock %}
 
 
 {% block main %}
+
+  ## Importing Blocks
+
   This is a demo `block` in the page element.
 
   {% call blk.image("https://source.unsplash.com/ACt8ycSzpdE/640x480") %}
@@ -20,4 +25,10 @@ layout: _base.njk
   ```js
   code blocks are disabled for indent purposes, but fenced codeblocks still work.
   ```
+
+  ## Using `with context` at imports
+
+  {{ blk.card("photo-1") }}
+  {{ blk.card("photo-3") }}
+
 {% endblock %}

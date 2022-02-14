@@ -1,11 +1,19 @@
 {% import "utils/elements.njk" as els %}
 
-{% macro image(src) %}
+{% macro image(src) -%}
 <figure>
   <img src="{{ src }}" alt="">
-	<figcaption>
-    {{ caller() }}
-    {{ els.btn("see image") }}
+  <figcaption>
+    {{- caller() -}}
+    {{ els.btn("this button is a nested import") }}
   </figcaption>
 </figure>
-{% endmacro %}
+{%- endmacro %}
+
+{% macro card(slug) -%}
+{% set post = collections.post | findBySlug(slug) %}
+<div class="card">
+  <h2>{{ post.data.title }}</h2>
+  <p>Here is a card for the post with the slug: <code>{{ slug }}</code></p>
+</div>
+{%- endmacro %}

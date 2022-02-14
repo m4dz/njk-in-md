@@ -1,16 +1,16 @@
 {% import "utils/elements.njk" as els %}
 
-{% macro image(src) %}
+{% macro image(src) -%}
 <figure>
   <img src="{{ src }}" alt="">
-	<figcaption>
-    {{ caller() }}
+  <figcaption>
+    {{- caller() -}}
     {{ els.btn("see image") }}
   </figcaption>
 </figure>
-{% endmacro %}
+{%- endmacro %}
 
-{% macro photo(slug) %}
+{% macro photo(slug) -%}
 {% set post = collections.post | findBySlug(slug) %}
-{{ post.data.title }}
-{% endmacro %}
+<h2>{{ post.data.title }}</h2>
+{%- endmacro %}
